@@ -52,7 +52,8 @@ export function QuoteModal() {
 
   // When category list changes (lang), reset to default if invalid
   useEffect(() => {
-    if (!t.carCategories.includes(carCategory)) {
+    const cats: readonly string[] = t.carCategories;
+    if (!cats.includes(carCategory)) {
       setCarCategory(t.carCategories[3]);
     }
   }, [t.carCategories, carCategory]);
