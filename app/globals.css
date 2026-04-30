@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bone: #f4f2ed;
+  --color-bone-soft: #e8e5dd;
+  --color-graphite: #5c5d60;
+  --color-charcoal: #2a2a2c;
+  --color-onyx: #131314;
+  --color-noir: #090909;
+  --color-cdc: #cdcdcd;
+  --color-olive: #4b5834;
+  --color-olive-light: #6a7a4d;
+  --color-olive-dark: #353f25;
+
+  --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  --tracking-luxe: 0.18em;
+  --tracking-wider-1: 0.32em;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-noir);
+  font-family: var(--font-body);
+  font-feature-settings: "ss01", "cv11";
+}
+
+::selection {
+  background: var(--color-olive);
+  color: #ffffff;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb {
+  background: #cdcdcd;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-graphite);
+}
+
+/* Utility: thin display lockup like the logo */
+.display-lockup {
+  font-family: var(--font-display);
+  letter-spacing: var(--tracking-luxe);
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  letter-spacing: var(--tracking-wider-1);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.7rem;
+}
+
+/* Hairline divider used in the brand */
+.hairline {
+  height: 1px;
+  background: currentColor;
+  opacity: 0.18;
+  width: 100%;
+}
+
+/* Subtle film grain for hero & dark sections */
+.grain {
+  position: relative;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.35'/></svg>");
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Soft luminous gradient used on dark sections */
+.bg-noir-glow {
+  background:
+    radial-gradient(60% 60% at 80% 0%, rgba(75, 88, 52, 0.18), transparent 60%),
+    radial-gradient(80% 50% at 0% 100%, rgba(75, 88, 52, 0.10), transparent 60%),
+    linear-gradient(180deg, #0a0a0b 0%, #050506 100%);
+}
+
+.bg-bone-glow {
+  background:
+    radial-gradient(50% 60% at 100% 0%, rgba(75, 88, 52, 0.06), transparent 60%),
+    radial-gradient(40% 50% at 0% 100%, rgba(0, 0, 0, 0.04), transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #f4f2ed 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
