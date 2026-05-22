@@ -12,7 +12,7 @@ export function FinalCTA() {
       {/* Subtle background image */}
       <div className="absolute inset-0 -z-10 opacity-25">
         <Image
-          src="/photos/porsche/02.jpg"
+          src="/photos/services/ceramique.jpg"
           alt=""
           fill
           sizes="100vw"

@@ -49,7 +49,7 @@ export function Visit() {
               className="relative aspect-[4/5] w-full overflow-hidden lg:aspect-auto lg:h-full lg:min-h-[36rem]"
             >
               <Image
-                src="/photos/formation/02.jpg"
+                src="/photos/visit/atelier.jpg"
                 alt={t.visit.title1}
                 fill
                 sizes="(min-width: 1024px) 50vw, 90vw"

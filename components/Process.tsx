@@ -32,7 +32,7 @@ export function Process() {
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/5] w-full overflow-hidden">
               <Image
-                src="/photos/formation/04.jpg"
+                src="/photos/process/main.jpg"
                 alt={t.process.title1}
                 fill
                 sizes="(min-width: 1024px) 38vw, 90vw"

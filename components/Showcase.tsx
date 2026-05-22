@@ -23,7 +23,7 @@ export function Showcase() {
                 className="relative col-span-7 row-span-8 overflow-hidden"
               >
                 <Image
-                  src="/photos/porsche/01.jpg"
+                  src="/photos/showcase/01.jpg"
                   alt="Porsche GT4 RS"
                   fill
                   sizes="(min-width: 1024px) 40vw, 90vw"
@@ -38,7 +38,7 @@ export function Showcase() {
                 className="relative col-span-5 col-start-8 row-span-5 overflow-hidden"
               >
                 <Image
-                  src="/photos/porsche/05.jpg"
+                  src="/photos/showcase/02.jpg"
                   alt="Porsche GT4 RS"
                   fill
                   sizes="(min-width: 1024px) 25vw, 45vw"
@@ -53,7 +53,7 @@ export function Showcase() {
                 className="relative col-span-5 col-start-8 row-span-7 row-start-6 overflow-hidden"
               >
                 <Image
-                  src="/photos/porsche/12.jpg"
+                  src="/photos/showcase/03.jpg"
                   alt="Porsche GT4 RS"
                   fill
                   sizes="(min-width: 1024px) 25vw, 45vw"
@@ -68,7 +68,7 @@ export function Showcase() {
                 className="relative col-span-7 row-span-4 row-start-9 overflow-hidden"
               >
                 <Image
-                  src="/photos/porsche/08.jpg"
+                  src="/photos/showcase/04.jpg"
                   alt="Porsche GT4 RS"
                   fill
                   sizes="(min-width: 1024px) 40vw, 90vw"

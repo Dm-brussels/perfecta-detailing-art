@@ -8,10 +8,10 @@ import { SectionTitle } from "./SectionTitle";
 import { CTAButton } from "./CTAButton";
 
 const SERVICE_IMAGES: Record<string, string> = {
-  ppf: "/photos/porsche/04.jpg",
-  ceramique: "/photos/porsche/02.jpg",
-  detailing: "/photos/porsche/06.jpg",
-  nettoyage: "/photos/porsche/09.jpg",
+  ppf: "/photos/services/ppf.jpg",
+  ceramique: "/photos/services/ceramique.jpg",
+  detailing: "/photos/services/detailing.jpg",
+  nettoyage: "/photos/services/nettoyage.jpg",
 };
 
 export function Services() {
