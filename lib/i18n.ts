@@ -185,7 +185,7 @@ export const dict = {
       eyebrow: "— Pourquoi nous",
       title1: "Le calme du studio,",
       title2: "la précision de l'artisan.",
-      desc: "On ne parle pas de service client, on parle d'une relation. Vous nous confiez un véhicule, on vous le rend dans un état que vous n'avez peut-être jamais vu.",
+      desc: "Chez nous, on ne vend pas un simple detailing : on partage une expérience. Le calme de l'atelier, le geste précis, le suivi à chaque étape — vous confiez un véhicule, vous le retrouvez dans un état que vous n'avez peut-être jamais vu.",
       cta: "Lancer mon projet",
       pillars: [
         {
@@ -557,7 +557,7 @@ export const dict = {
       eyebrow: "— Why us",
       title1: "The calm of the studio,",
       title2: "the precision of the artisan.",
-      desc: "We don't talk about customer service — we talk about a relationship. You hand us a car, we hand it back in a state you may have never seen.",
+      desc: "With us, you're not booking detailing — you're sharing an experience. The calm of the studio, the precise gesture, the follow-up at every step. You hand us a car, you find it back in a state you may have never seen.",
       cta: "Start my project",
       pillars: [
         {
