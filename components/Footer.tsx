@@ -99,7 +99,7 @@ export function Footer() {
             © {new Date().getFullYear()} Perfecta Detailing Art. {t.common.copyright}
           </p>
           <p className="font-display text-xs italic text-white/45">
-            — {t.common.footerSig} PDA
+            {t.common.footerSig} · PDA
           </p>
         </div>
       </div>

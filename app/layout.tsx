@@ -19,7 +19,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://perfectadetailingart.com"),
   title: {
-    default: "Perfecta Detailing Art — Centre esthétique automobile",
+    default: "Perfecta Detailing Art · Centre esthétique automobile",
     template: "%s · Perfecta Detailing Art",
   },
   description:
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    title: "Perfecta Detailing Art — Centre esthétique automobile",
+    title: "Perfecta Detailing Art · Centre esthétique automobile",
     description:
       "Pose de PPF, céramique et detailing premium. Un soin obsessionnel du détail, pour véhicules d'exception.",
     siteName: "Perfecta Detailing Art",

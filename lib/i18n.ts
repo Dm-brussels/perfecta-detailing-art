@@ -36,7 +36,7 @@ export const dict = {
       seeFollow: "Suivre l'atelier",
     },
     hero: {
-      eyebrow: "— Centre esthétique automobile",
+      eyebrow: "Centre esthétique automobile",
       title1: "L'art du détail,",
       title2: "au service de votre véhicule.",
       desc: "Pose de PPF Labocosmetica, traitement céramique et detailing premium. Un travail patient, exécuté en atelier, pour les véhicules d'exception qui méritent un soin à leur hauteur.",
@@ -57,7 +57,7 @@ export const dict = {
       { value: "1", suffix: "véhicule", label: "à la fois, jamais à la chaîne" },
     ],
     services: {
-      eyebrow: "— Nos services",
+      eyebrow: "Nos services",
       title1: "Quatre savoir-faire,",
       title2: "une seule obsession.",
       desc: "Du film de protection au detailing complet, chaque prestation est exécutée en atelier, avec la même rigueur, qu'il s'agisse d'une berline familiale ou d'une supercar.",
@@ -110,7 +110,7 @@ export const dict = {
           description:
             "Lavage manuel deux seaux, décontamination de surface, nettoyage intérieur en profondeur. Le rituel d'entretien indispensable entre deux sorties.",
           bullets: [
-            "Lavage manuel — méthode deux seaux",
+            "Lavage manuel, méthode deux seaux",
             "Aspiration & nettoyage intérieur complet",
             "Soin des plastiques & vitres sans traces",
             "Idéal entre deux sorties circuit",
@@ -119,11 +119,11 @@ export const dict = {
       ],
     },
     process: {
-      eyebrow: "— Notre process",
+      eyebrow: "Notre process",
       title1: "Avant. Pendant. Après.",
       title2: "Sans concession.",
       desc: "Chaque véhicule suit le même protocole. Quatre étapes maîtrisées dans un atelier privé, sous lumière contrôlée. Pas de chaîne, pas de précipitation.",
-      atelier: "— Atelier · Bruxelles",
+      atelier: "Atelier · Bruxelles",
       pullquote:
         "« On vous embarque dans chaque étape jusqu'au résultat final. »",
       cta: "Confier mon véhicule",
@@ -151,10 +151,10 @@ export const dict = {
       ],
     },
     showcase: {
-      eyebrow: "— Étude de cas",
+      eyebrow: "Étude de cas",
       title1: "Porsche 911 Speedster,",
       title2: "une livraison sur-mesure.",
-      desc: "Réceptionnée à l'atelier pour une protection intégrale. Pose d'un film de protection Labocosmetica sur l'ensemble de la carrosserie, traitement céramique en finition. Restituée prête à rouler — et à durer.",
+      desc: "Réceptionnée à l'atelier pour une protection intégrale. Pose d'un film de protection Labocosmetica sur l'ensemble de la carrosserie, traitement céramique en finition. Restituée prête à rouler, et à durer.",
       cta: "Recevoir un devis personnalisé",
       seeMore: "Voir d'autres réalisations",
       stats: [
@@ -165,10 +165,10 @@ export const dict = {
       ],
     },
     gallery: {
-      eyebrow: "— Galerie",
+      eyebrow: "Galerie",
       title1: "Quelques véhicules,",
       title2: "qui sont passés entre nos mains.",
-      desc: "Un échantillon des projets récents. Chaque cliché est un véhicule client, photographié au sortir de l'atelier — sans retouche.",
+      desc: "Un échantillon des projets récents. Chaque cliché est un véhicule client, photographié au sortir de l'atelier, sans retouche.",
       cta: "Confier mon véhicule",
       items: [
         { src: "/photos/gallery/01-gt4rs.jpg", title: "Porsche 718 Cayman GT4 RS", tag: "PPF intégral · Céramique" },
@@ -182,10 +182,10 @@ export const dict = {
       ],
     },
     why: {
-      eyebrow: "— Pourquoi nous",
+      eyebrow: "Pourquoi nous",
       title1: "Le calme du studio,",
       title2: "la précision de l'artisan.",
-      desc: "Chez nous, on ne vend pas un simple detailing : on partage une expérience. Le calme de l'atelier, le geste précis, le suivi à chaque étape — vous confiez un véhicule, vous le retrouvez dans un état que vous n'avez peut-être jamais vu.",
+      desc: "Chez nous, on ne vend pas un simple detailing : on partage une expérience. Le calme de l'atelier, le geste précis, le suivi à chaque étape. Vous confiez un véhicule, vous le retrouvez dans un état que vous n'avez peut-être jamais vu.",
       cta: "Lancer mon projet",
       pillars: [
         {
@@ -221,7 +221,7 @@ export const dict = {
       ],
     },
     testimonials: {
-      eyebrow: "— Avis clients",
+      eyebrow: "Avis clients",
       title1: "Le résultat",
       title2: "parle de lui-même.",
       desc: "Quelques retours de propriétaires qui nous ont confié leur véhicule.",
@@ -250,7 +250,7 @@ export const dict = {
       ],
     },
     faq: {
-      eyebrow: "— FAQ",
+      eyebrow: "FAQ",
       title1: "Les questions",
       title2: "qu'on nous pose souvent.",
       desc: "Si la réponse n'est pas là, le formulaire de devis nous arrive directement.",
@@ -283,7 +283,7 @@ export const dict = {
       ],
     },
     visit: {
-      eyebrow: "— Visite & atelier",
+      eyebrow: "Visite & atelier",
       title1: "Venez voir l'atelier,",
       title2: "on vous attend.",
       desc: "Visite uniquement sur rendez-vous, pour préserver le calme de l'atelier et la concentration sur les projets en cours.",
@@ -297,7 +297,7 @@ export const dict = {
         "Un espace pensé pour le travail de précision : lumière constante, surfaces claires, plantes vertes, béton ciré au sol.",
     },
     cta: {
-      eyebrow: "— Prêt à confier votre véhicule ?",
+      eyebrow: "Prêt à confier votre véhicule ?",
       title1: "Une seule étape",
       title2: "pour démarrer.",
       desc: "Quelques informations sur votre véhicule, vos attentes, et nous revenons vers vous sous 24 heures ouvrées avec un premier retour. Devis détaillé, sans engagement.",
@@ -357,7 +357,7 @@ export const dict = {
       { id: "ceramique", label: "Traitement céramique", desc: "Polissage et application céramique professionnelle." },
       { id: "detailing", label: "Detailing complet", desc: "Remise à neuf intérieure & extérieure." },
       { id: "nettoyage", label: "Nettoyage premium", desc: "Entretien complet sans pose de film." },
-      { id: "consult", label: "Conseil / Diagnostic", desc: "Je ne sais pas encore — j'aimerais vos recommandations." },
+      { id: "consult", label: "Conseil / Diagnostic", desc: "Je ne sais pas encore, j'aimerais vos recommandations." },
     ],
     carCategories: [
       "Citadine / Compacte",
@@ -425,7 +425,7 @@ export const dict = {
       seeFollow: "Follow the studio",
     },
     hero: {
-      eyebrow: "— Automotive aesthetics studio",
+      eyebrow: "Automotive aesthetics studio",
       title1: "The art of detail,",
       title2: "in service of your car.",
       desc: "Labocosmetica PPF, ceramic coating and premium detailing. A patient, in-studio craft for exceptional cars that deserve the highest level of care.",
@@ -446,10 +446,10 @@ export const dict = {
       { value: "1", suffix: "car", label: "at a time, never on a line" },
     ],
     services: {
-      eyebrow: "— Our services",
+      eyebrow: "Our services",
       title1: "Four crafts,",
       title2: "one obsession.",
-      desc: "From paint protection film to full detailing, every service is executed in-studio with the same rigour — whether it's a daily driver or a supercar.",
+      desc: "From paint protection film to full detailing, every service is executed in-studio with the same rigour, whether it's a daily driver or a supercar.",
       startProject: "Start a project",
       ctaForThis: "Request this service",
       items: [
@@ -508,11 +508,11 @@ export const dict = {
       ],
     },
     process: {
-      eyebrow: "— Our process",
+      eyebrow: "Our process",
       title1: "Before. During. After.",
       title2: "No compromise.",
       desc: "Every car follows the same protocol. Four mastered steps in a private studio, under controlled lighting. No production line, no rush.",
-      atelier: "— Studio · Brussels",
+      atelier: "Studio · Brussels",
       pullquote: "“We take you through every step until the final result.”",
       cta: "Trust us with my car",
       steps: [
@@ -523,10 +523,10 @@ export const dict = {
       ],
     },
     showcase: {
-      eyebrow: "— Case study",
+      eyebrow: "Case study",
       title1: "Porsche 911 Speedster,",
       title2: "a tailored delivery.",
-      desc: "Received at the studio for full protection. Labocosmetica PPF on the entire bodywork, ceramic coating as the finishing layer. Handed back ready to drive — and to last.",
+      desc: "Received at the studio for full protection. Labocosmetica PPF on the entire bodywork, ceramic coating as the finishing layer. Handed back ready to drive, and to last.",
       cta: "Request a tailored quote",
       seeMore: "Browse other projects",
       stats: [
@@ -537,10 +537,10 @@ export const dict = {
       ],
     },
     gallery: {
-      eyebrow: "— Gallery",
+      eyebrow: "Gallery",
       title1: "A few cars",
       title2: "that passed through our hands.",
-      desc: "A glimpse of recent projects. Each shot is a customer's car, photographed straight out of the studio — no retouching.",
+      desc: "A glimpse of recent projects. Each shot is a customer's car, photographed straight out of the studio, no retouching.",
       cta: "Trust us with my car",
       items: [
         { src: "/photos/gallery/01-gt4rs.jpg", title: "Porsche 718 Cayman GT4 RS", tag: "Full PPF · Ceramic" },
@@ -554,10 +554,10 @@ export const dict = {
       ],
     },
     why: {
-      eyebrow: "— Why us",
+      eyebrow: "Why us",
       title1: "The calm of the studio,",
       title2: "the precision of the artisan.",
-      desc: "With us, you're not booking detailing — you're sharing an experience. The calm of the studio, the precise gesture, the follow-up at every step. You hand us a car, you find it back in a state you may have never seen.",
+      desc: "With us, you're not booking detailing, you're sharing an experience. The calm of the studio, the precise gesture, the follow-up at every step. You hand us a car, you find it back in a state you may have never seen.",
       cta: "Start my project",
       pillars: [
         {
@@ -593,7 +593,7 @@ export const dict = {
       ],
     },
     testimonials: {
-      eyebrow: "— Customer reviews",
+      eyebrow: "Customer reviews",
       title1: "The result",
       title2: "speaks for itself.",
       desc: "A few words from owners who trusted us with their cars.",
@@ -622,14 +622,14 @@ export const dict = {
       ],
     },
     faq: {
-      eyebrow: "— FAQ",
+      eyebrow: "FAQ",
       title1: "Questions",
       title2: "we get most often.",
       desc: "If your answer isn't here, the quote form lands directly with us.",
       cta: "Ask via the quote form",
       items: [
         { q: "How long does my car stay in the studio?", a: "It depends on the service. A full PPF install takes four to six days. A ceramic coating runs over one to two days, after preparation. We always share a precise timeline before drop-off." },
-        { q: "Is PPF really invisible?", a: "Yes. We work exclusively with Labocosmetica films, perfectly transparent, fitted to the millimetre with no visible disassembly. The car keeps its original look — only better protected." },
+        { q: "Is PPF really invisible?", a: "Yes. We work exclusively with Labocosmetica films, perfectly transparent, fitted to the millimetre with no visible disassembly. The car keeps its original look, only better protected." },
         { q: "What's the warranty on the film?", a: "Ten years against yellowing, lifting and application defects. Surface scratches self-heal with heat." },
         { q: "Can I wash my car normally after a PPF install?", a: "Yes, after a curing period that we'll share with you. We recommend hand-wash and can supply suitable products on request." },
         { q: "Do you work on every type of car?", a: "We specialise in performance and exceptional cars, but also work on more classic premium vehicles. For unusual requests, get in touch via the form." },
@@ -637,7 +637,7 @@ export const dict = {
       ],
     },
     visit: {
-      eyebrow: "— Visit & studio",
+      eyebrow: "Visit & studio",
       title1: "Come and see the studio,",
       title2: "we'll be waiting.",
       desc: "Visits by appointment only, to preserve the calm of the studio and the focus on ongoing projects.",
@@ -651,10 +651,10 @@ export const dict = {
         "A space designed for precision work: constant lighting, clean surfaces, green plants, polished concrete floor.",
     },
     cta: {
-      eyebrow: "— Ready to entrust your car?",
+      eyebrow: "Ready to entrust your car?",
       title1: "One single step",
       title2: "to get started.",
-      desc: "A few details about your car and your expectations — we'll come back to you within 24 working hours with an initial quote. Detailed, no commitment.",
+      desc: "A few details about your car and your expectations. We'll come back to you within 24 working hours with an initial quote. Detailed, no commitment.",
       cta: "Request a quote",
       bullets: [
         "Reply within 24 working hours",
@@ -669,7 +669,7 @@ export const dict = {
       stepLabels: ["Service", "Vehicle", "Options", "Contact"],
       step1: {
         title: "Which service do you have in mind?",
-        sub: "Pick the main need — we'll fine-tune the rest together.",
+        sub: "Pick the main need. We'll fine-tune the rest together.",
       },
       step2: {
         title: "Tell us about your car.",
@@ -711,7 +711,7 @@ export const dict = {
       { id: "ceramique", label: "Ceramic coating", desc: "Polishing and pro ceramic coating." },
       { id: "detailing", label: "Full detailing", desc: "Inside & outside restoration." },
       { id: "nettoyage", label: "Premium cleaning", desc: "Full maintenance, no film install." },
-      { id: "consult", label: "Advice / Diagnosis", desc: "I'm not sure yet — I'd love your recommendation." },
+      { id: "consult", label: "Advice / Diagnosis", desc: "I'm not sure yet, I'd love your recommendation." },
     ],
     carCategories: [
       "City / Compact",

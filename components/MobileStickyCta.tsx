@@ -35,7 +35,7 @@ export function MobileStickyCta() {
       >
         <span className="flex flex-col items-start">
           <span className="text-[0.62rem] uppercase tracking-[0.32em] text-white/55">
-            — PDA
+            PDA
           </span>
           <span className="mt-1 text-[0.78rem] uppercase tracking-[0.22em]">
             {t.common.cta}

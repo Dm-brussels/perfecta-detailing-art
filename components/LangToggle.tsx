@@ -20,7 +20,7 @@ export function LangToggle({
       type="button"
       role="switch"
       aria-checked={isEn}
-      aria-label={`Switch language — currently ${lang.toUpperCase()}`}
+      aria-label={`Switch language, currently ${lang.toUpperCase()}`}
       onClick={() => setLang(isEn ? "fr" : "en")}
       className={`group relative inline-flex h-7 w-[4.25rem] items-center rounded-full transition-colors duration-500 cursor-pointer ${
         light

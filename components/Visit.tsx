@@ -57,7 +57,7 @@ export function Visit() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-noir/85 via-noir/15 to-transparent" />
               <div className="absolute bottom-8 left-8 right-8 text-white">
-                <span className="eyebrow text-white/65">— PDA</span>
+                <span className="eyebrow text-white/65">PDA</span>
                 <p className="mt-3 max-w-md font-display text-xl font-light italic leading-snug sm:text-2xl">
                   {t.visit.pullquote}
                 </p>

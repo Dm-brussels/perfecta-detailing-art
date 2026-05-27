@@ -180,7 +180,7 @@ export function QuoteModal() {
               <div className="absolute inset-0 bg-noir-glow opacity-95" />
               <div className="relative flex items-start justify-between gap-6">
                 <div>
-                  <span className="eyebrow text-white/55">— {t.modal.title}</span>
+                  <span className="eyebrow text-white/55">{t.modal.title}</span>
                   <h2 className="mt-3 font-display text-2xl font-light leading-tight sm:text-3xl">
                     {success ? t.modal.success.title : t.modal.title}
                     {!success && (
@@ -554,7 +554,7 @@ export function QuoteModal() {
                         {/* Recap */}
                         <div className="mt-10 border-t border-noir/10 pt-8">
                           <span className="eyebrow text-noir/45">
-                            — {t.modal.summary}
+                            {t.modal.summary}
                           </span>
                           <dl className="mt-4 grid grid-cols-1 gap-3 text-sm sm:grid-cols-2">
                             <div className="flex flex-col">
@@ -573,7 +573,7 @@ export function QuoteModal() {
                                 {t.modal.vehicle}
                               </dt>
                               <dd className="mt-1 text-noir">
-                                {carCategory} — {carModel || "—"}
+                                {carCategory} · {carModel || "…"}
                               </dd>
                             </div>
                             {addons.length > 0 && (
