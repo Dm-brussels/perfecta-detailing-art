@@ -170,6 +170,10 @@ export const dict = {
       title2: "qui sont passés entre nos mains.",
       desc: "Un échantillon des projets récents. Chaque cliché est un véhicule client, photographié au sortir de l'atelier, sans retouche.",
       cta: "Confier mon véhicule",
+      lightboxPrev: "Photo précédente",
+      lightboxNext: "Photo suivante",
+      lightboxClose: "Fermer la photo",
+      viewLarge: "Voir en grand",
       items: [
         { src: "/photos/gallery/01-gt4rs.jpg", title: "Porsche 718 Cayman GT4 RS", tag: "PPF intégral · Céramique" },
         { src: "/photos/gallery/02-vantage-detail.jpg", title: "Aston Martin Vantage", tag: "Finition & soin de carrosserie" },
@@ -542,6 +546,10 @@ export const dict = {
       title2: "that passed through our hands.",
       desc: "A glimpse of recent projects. Each shot is a customer's car, photographed straight out of the studio, no retouching.",
       cta: "Trust us with my car",
+      lightboxPrev: "Previous photo",
+      lightboxNext: "Next photo",
+      lightboxClose: "Close photo",
+      viewLarge: "View full size",
       items: [
         { src: "/photos/gallery/01-gt4rs.jpg", title: "Porsche 718 Cayman GT4 RS", tag: "Full PPF · Ceramic" },
         { src: "/photos/gallery/02-vantage-detail.jpg", title: "Aston Martin Vantage", tag: "Finish & bodywork care" },
