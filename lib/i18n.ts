@@ -52,7 +52,7 @@ export const dict = {
     },
     stats: [
       { value: "10", suffix: "ans", label: "de garantie sur le PPF Labocosmetica" },
-      { value: "+250", suffix: "", label: "véhicules pris en charge" },
+      { value: "+1000", suffix: "", label: "voitures réalisées en atelier" },
       { value: "100%", suffix: "", label: "exécuté en atelier, sans sous-traitance" },
       { value: "1", suffix: "véhicule", label: "à la fois, jamais à la chaîne" },
     ],
@@ -445,7 +445,7 @@ export const dict = {
     },
     stats: [
       { value: "10", suffix: "yrs", label: "warranty on Labocosmetica PPF" },
-      { value: "+250", suffix: "", label: "cars cared for" },
+      { value: "+1000", suffix: "", label: "cars completed in studio" },
       { value: "100%", suffix: "", label: "in-studio, never outsourced" },
       { value: "1", suffix: "car", label: "at a time, never on a line" },
     ],
