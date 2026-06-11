@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowDownRight } from "lucide-react";
 import { useT } from "./AppProviders";
 import { CTAButton } from "./CTAButton";
+import { HeroBackground } from "./HeroBackground";
 
 export function Hero() {
   const t = useT();
@@ -14,19 +14,8 @@ export function Hero() {
       id="top"
       className="relative isolate flex min-h-screen w-full flex-col overflow-hidden bg-noir text-white grain"
     >
-      {/* Background image */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/photos/hero/main.jpg"
-          alt={t.common.brandName}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-noir/80 via-noir/55 to-noir/95" />
-        <div className="absolute inset-0 bg-gradient-to-r from-noir/70 via-transparent to-transparent" />
-      </div>
+      {/* Background video + poster */}
+      <HeroBackground alt={t.common.brandName} />
 
       {/* Decorative side label */}
       <div className="pointer-events-none absolute inset-y-0 right-6 hidden lg:flex items-center">
