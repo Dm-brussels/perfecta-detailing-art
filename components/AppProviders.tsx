@@ -27,25 +27,9 @@ export function useT() {
   return useLang().t;
 }
 
-/* ───────── Quote modal context ───────── */
-const QuoteCtx = createContext<{
-  open: boolean;
-  preset?: string;
-  openModal: (presetServiceId?: string) => void;
-  closeModal: () => void;
-} | null>(null);
-
-export function useQuoteModal() {
-  const ctx = useContext(QuoteCtx);
-  if (!ctx) throw new Error("useQuoteModal must be inside <AppProviders>");
-  return ctx;
-}
-
 /* ───────── Provider ───────── */
 export function AppProviders({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Lang>("fr");
-  const [open, setOpen] = useState(false);
-  const [preset, setPreset] = useState<string | undefined>();
 
   // Init from localStorage / browser
   useEffect(() => {
@@ -68,38 +52,10 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
 
   const setLang = useCallback((l: Lang) => setLangState(l), []);
 
-  const openModal = useCallback((presetServiceId?: string) => {
-    setPreset(presetServiceId);
-    setOpen(true);
-  }, []);
-
-  const closeModal = useCallback(() => {
-    setOpen(false);
-  }, []);
-
-  // Lock body scroll when modal open
-  useEffect(() => {
-    if (typeof document === "undefined") return;
-    const original = document.body.style.overflow;
-    if (open) document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = original;
-    };
-  }, [open]);
-
   const langValue = useMemo(
     () => ({ lang, setLang, t: dict[lang] as Dict }),
     [lang, setLang],
   );
 
-  const quoteValue = useMemo(
-    () => ({ open, preset, openModal, closeModal }),
-    [open, preset, openModal, closeModal],
-  );
-
-  return (
-    <LangCtx.Provider value={langValue}>
-      <QuoteCtx.Provider value={quoteValue}>{children}</QuoteCtx.Provider>
-    </LangCtx.Provider>
-  );
+  return <LangCtx.Provider value={langValue}>{children}</LangCtx.Provider>;
 }

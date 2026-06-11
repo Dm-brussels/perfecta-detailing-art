@@ -1,9 +1,16 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { useQuoteModal, useT } from "./AppProviders";
+import { useT } from "./AppProviders";
 
-type Variant = "primary-light" | "primary-dark" | "ghost-light" | "ghost-dark" | "outline-dark" | "outline-light";
+type Variant =
+  | "primary-light"
+  | "primary-dark"
+  | "ghost-light"
+  | "ghost-dark"
+  | "outline-dark"
+  | "outline-light";
 
 type Props = {
   variant?: Variant;
@@ -25,7 +32,6 @@ export function CTAButton({
   fullWidth = false,
 }: Props) {
   const t = useT();
-  const { openModal } = useQuoteModal();
 
   const finalLabel = label ?? t.common.cta;
   const isLg = size === "lg";
@@ -45,12 +51,12 @@ export function CTAButton({
 
   const Icon = arrow === "up-right" ? ArrowUpRight : ArrowRight;
 
+  const href = presetServiceId
+    ? `/devis?service=${encodeURIComponent(presetServiceId)}`
+    : "/devis";
+
   return (
-    <button
-      type="button"
-      onClick={() => openModal(presetServiceId)}
-      className={`${base} ${variantClass} ${className}`}
-    >
+    <Link href={href} className={`${base} ${variantClass} ${className}`}>
       <span
         className={`uppercase ${
           isLg ? "text-[0.78rem] tracking-[0.24em]" : "text-[0.72rem] tracking-[0.22em]"
@@ -68,6 +74,6 @@ export function CTAButton({
           }`}
         />
       )}
-    </button>
+    </Link>
   );
 }

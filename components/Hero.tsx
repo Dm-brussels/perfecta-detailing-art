@@ -42,24 +42,9 @@ export function Hero() {
           transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-4xl"
         >
-          {/* Prominent logo lockup */}
-          <div className="flex flex-col items-start text-white">
-            <span className="display-lockup text-[1.45rem] leading-none sm:text-[1.9rem] lg:text-[2.4rem] tracking-[0.18em] sm:tracking-[0.2em]">
-              {t.common.brandName}
-            </span>
-            <span
-              aria-hidden
-              className="mt-3 h-px w-full bg-white/45 sm:mt-4"
-            />
-            <span className="mt-3 display-lockup text-[0.7rem] tracking-[0.4em] opacity-90 sm:mt-4 sm:text-[0.85rem]">
-              {t.common.brandTagline}
-            </span>
-          </div>
-
-          <span aria-hidden className="my-10 block h-px w-16 bg-olive-light sm:my-14" />
-
           <span className="eyebrow text-white/65">{t.hero.eyebrow}</span>
-          <h1 className="mt-6 font-display text-4xl font-light leading-[1.05] tracking-tight text-white text-balance sm:text-5xl lg:text-[4.5rem]">
+          <span aria-hidden className="my-6 block h-px w-14 bg-olive-light" />
+          <h1 className="font-display text-5xl font-light leading-[1.02] tracking-tight text-white text-balance sm:text-6xl lg:text-[5.25rem]">
             {t.hero.title1}
             <br />
             <span className="italic font-light text-white/95">{t.hero.title2}</span>

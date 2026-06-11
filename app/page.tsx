@@ -1,4 +1,3 @@
-import { AppProviders } from "@/components/AppProviders";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Marquee } from "@/components/Marquee";
@@ -13,12 +12,11 @@ import { FAQ } from "@/components/FAQ";
 import { Visit } from "@/components/Visit";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
-import { QuoteModal } from "@/components/QuoteModal";
 import { MobileStickyCta } from "@/components/MobileStickyCta";
 
 export default function Home() {
   return (
-    <AppProviders>
+    <>
       <Header />
       <main>
         <Hero />
@@ -35,8 +33,7 @@ export default function Home() {
         <FinalCTA />
       </main>
       <Footer />
-      <QuoteModal />
       <MobileStickyCta />
-    </AppProviders>
+    </>
   );
 }

@@ -3,13 +3,12 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { useQuoteModal, useT } from "./AppProviders";
+import { useT } from "./AppProviders";
 import { Wordmark } from "./Wordmark";
 import { LangToggle } from "./LangToggle";
 
 export function Header() {
   const t = useT();
-  const { openModal } = useQuoteModal();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -66,9 +65,8 @@ export function Header() {
 
           <div className="flex items-center gap-3">
             <LangToggle variant={scrolled ? "dark" : "light"} />
-            <button
-              type="button"
-              onClick={() => openModal()}
+            <Link
+              href="/devis"
               className={`hidden sm:inline-flex h-10 items-center px-5 text-[0.72rem] uppercase tracking-[0.22em] transition-all duration-300 cursor-pointer ${
                 scrolled
                   ? "bg-noir text-white hover:bg-olive"
@@ -76,7 +74,7 @@ export function Header() {
               }`}
             >
               {t.common.cta}
-            </button>
+            </Link>
             <button
               type="button"
               aria-label={t.nav.menuOpen}
@@ -128,16 +126,13 @@ export function Header() {
               {l.label}
             </a>
           ))}
-          <button
-            type="button"
-            onClick={() => {
-              setOpen(false);
-              openModal();
-            }}
+          <Link
+            href="/devis"
+            onClick={() => setOpen(false)}
             className="mt-6 inline-flex h-12 items-center bg-white px-8 text-[0.72rem] uppercase tracking-[0.22em] text-noir hover:bg-olive hover:text-white transition-colors cursor-pointer"
           >
             {t.common.cta}
-          </button>
+          </Link>
         </nav>
       </div>
     </>
