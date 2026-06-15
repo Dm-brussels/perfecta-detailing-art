@@ -22,7 +22,6 @@ export default function Home() {
       <main>
         <Hero />
         <Marquee />
-        <Ambassador />
         <Stats />
         <Services />
         <Process />
@@ -33,6 +32,7 @@ export default function Home() {
         <FAQ />
         <Visit />
         <FinalCTA />
+        <Ambassador />
       </main>
       <Footer />
       <MobileStickyCta />
