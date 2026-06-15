@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Marquee } from "@/components/Marquee";
+import { Ambassador } from "@/components/Ambassador";
 import { Stats } from "@/components/Stats";
 import { Services } from "@/components/Services";
 import { Process } from "@/components/Process";
@@ -21,6 +22,7 @@ export default function Home() {
       <main>
         <Hero />
         <Marquee />
+        <Ambassador />
         <Stats />
         <Services />
         <Process />

@@ -56,6 +56,15 @@ export const dict = {
       { value: "100%", suffix: "", label: "exécuté en atelier, sans sous-traitance" },
       { value: "1", suffix: "véhicule", label: "à la fois, jamais à la chaîne" },
     ],
+    ambassador: {
+      eyebrow: "Partenaire officiel",
+      lead: "Perfecta Detailing Art est",
+      titleLine: "Brand Ambassadeur Labocosmetica",
+      role1: "Brand Ambassadeur",
+      role2: "Formateur officiel PPF pour Labocosmetica Belgique",
+      note: "Films et solutions de protection signés Labocosmetica, laboratoire italien depuis 1965.",
+      alt: "Logo Labocosmetica",
+    },
     services: {
       eyebrow: "Nos services",
       title1: "Quatre savoir-faire,",
@@ -449,6 +458,15 @@ export const dict = {
       { value: "100%", suffix: "", label: "in-studio, never outsourced" },
       { value: "1", suffix: "car", label: "at a time, never on a line" },
     ],
+    ambassador: {
+      eyebrow: "Official partner",
+      lead: "Perfecta Detailing Art is a",
+      titleLine: "Labocosmetica Brand Ambassador",
+      role1: "Brand Ambassador",
+      role2: "Official PPF trainer for Labocosmetica Belgium",
+      note: "Protection films and solutions by Labocosmetica, an Italian laboratory since 1965.",
+      alt: "Labocosmetica logo",
+    },
     services: {
       eyebrow: "Our services",
       title1: "Four crafts,",

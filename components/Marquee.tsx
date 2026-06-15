@@ -46,11 +46,11 @@ export function Marquee() {
           }
         }
         .animate-marquee {
-          animation: marquee 18s linear infinite;
+          animation: marquee 11s linear infinite;
         }
         @media (min-width: 640px) {
           .animate-marquee {
-            animation-duration: 38s;
+            animation-duration: 22s;
           }
         }
       `}</style>
