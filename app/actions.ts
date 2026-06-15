@@ -75,7 +75,7 @@ function buildClientHtml(data: QuoteInput) {
           "In the meantime, feel free to reply directly to this email if you have any extra details to share.",
         signoff: "Warm regards,",
         team: "The Perfecta Detailing Art team",
-        footer: "Perfecta Detailing Art · Automotive aesthetics studio · Brussels",
+        footer: "Perfecta Detailing Art · Automotive aesthetics studio · Braine-l'Alleud",
         subject: "We received your request",
       }
     : {
@@ -94,7 +94,7 @@ function buildClientHtml(data: QuoteInput) {
           "D'ici là, n'hésitez pas à répondre directement à cet email si vous avez d'autres précisions à nous transmettre.",
         signoff: "À très vite,",
         team: "L'équipe Perfecta Detailing Art",
-        footer: "Perfecta Detailing Art · Centre esthétique automobile · Bruxelles",
+        footer: "Perfecta Detailing Art · Centre esthétique automobile · Braine-l'Alleud",
         subject: "Nous avons bien reçu votre demande",
       };
 

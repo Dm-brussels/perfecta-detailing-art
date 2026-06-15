@@ -32,7 +32,7 @@ export const dict = {
       services: "Services",
       socials: "Réseaux",
       visit: "Visite & atelier",
-      visitText: "Atelier sur rendez-vous, Bruxelles",
+      visitText: "Atelier sur rendez-vous, Braine-l'Alleud",
       seeFollow: "Suivre l'atelier",
     },
     hero: {
@@ -45,10 +45,10 @@ export const dict = {
       strip: [
         { k: "Garantie", v: "10 ans sur le PPF" },
         { k: "Capacité", v: "Un véhicule à la fois" },
-        { k: "Méthode", v: "Atelier privé · Bruxelles" },
+        { k: "Méthode", v: "Atelier privé · Braine-l'Alleud" },
         { k: "Films", v: "Labocosmetica" },
       ],
-      sideLabel: "PDA · Atelier · Bruxelles · 2026",
+      sideLabel: "PDA · Atelier · Braine-l'Alleud · 2026",
     },
     stats: [
       { value: "10", suffix: "ans", label: "de garantie sur le PPF Labocosmetica" },
@@ -132,7 +132,7 @@ export const dict = {
       title1: "Avant. Pendant. Après.",
       title2: "Sans concession.",
       desc: "Chaque véhicule suit le même protocole. Quatre étapes maîtrisées dans un atelier privé, sous lumière contrôlée. Pas de chaîne, pas de précipitation.",
-      atelier: "Atelier · Bruxelles",
+      atelier: "Atelier · Braine-l'Alleud",
       pullquote:
         "« On vous embarque dans chaque étape jusqu'au résultat final. »",
       cta: "Confier mon véhicule",
@@ -302,7 +302,7 @@ export const dict = {
       desc: "Visite uniquement sur rendez-vous, pour préserver le calme de l'atelier et la concentration sur les projets en cours.",
       cta: "Prendre rendez-vous",
       cards: [
-        { k: "Adresse", v: "Atelier PDA · Bruxelles", sub: "Région de Bruxelles-Capitale, Belgique" },
+        { k: "Adresse", v: "Grand'Route 217, 1428 Lillois-Witterzée", sub: "Braine-l'Alleud, Belgique" },
         { k: "Horaires", v: "Lun – Ven · 9h – 18h", sub: "Sur rendez-vous uniquement" },
         { k: "Atelier", v: "Espace privé & contrôlé", sub: "Lumière constante, sols clairs, environnement sain" },
       ],
@@ -434,7 +434,7 @@ export const dict = {
       services: "Services",
       socials: "Social",
       visit: "Visit & studio",
-      visitText: "Studio by appointment, Brussels",
+      visitText: "Studio by appointment, Braine-l'Alleud",
       seeFollow: "Follow the studio",
     },
     hero: {
@@ -447,10 +447,10 @@ export const dict = {
       strip: [
         { k: "Warranty", v: "10 years on PPF" },
         { k: "Capacity", v: "One car at a time" },
-        { k: "Method", v: "Private studio · Brussels" },
+        { k: "Method", v: "Private studio · Braine-l'Alleud" },
         { k: "Films", v: "Labocosmetica" },
       ],
-      sideLabel: "PDA · Studio · Brussels · 2026",
+      sideLabel: "PDA · Studio · Braine-l'Alleud · 2026",
     },
     stats: [
       { value: "10", suffix: "yrs", label: "warranty on Labocosmetica PPF" },
@@ -534,7 +534,7 @@ export const dict = {
       title1: "Before. During. After.",
       title2: "No compromise.",
       desc: "Every car follows the same protocol. Four mastered steps in a private studio, under controlled lighting. No production line, no rush.",
-      atelier: "Studio · Brussels",
+      atelier: "Studio · Braine-l'Alleud",
       pullquote: "“We take you through every step until the final result.”",
       cta: "Trust us with my car",
       steps: [
@@ -669,7 +669,7 @@ export const dict = {
       desc: "Visits by appointment only, to preserve the calm of the studio and the focus on ongoing projects.",
       cta: "Book a visit",
       cards: [
-        { k: "Address", v: "PDA Studio · Brussels", sub: "Brussels-Capital Region, Belgium" },
+        { k: "Address", v: "Grand'Route 217, 1428 Lillois-Witterzée", sub: "Braine-l'Alleud, Belgium" },
         { k: "Hours", v: "Mon – Fri · 9am – 6pm", sub: "By appointment only" },
         { k: "Studio", v: "Private & controlled space", sub: "Constant lighting, clean floors, healthy environment" },
       ],
