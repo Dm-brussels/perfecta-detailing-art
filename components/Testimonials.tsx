@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useT } from "./AppProviders";
 import { CTAButton } from "./CTAButton";
@@ -51,18 +51,16 @@ export function Testimonials() {
             </div>
 
             <div className="mt-10">
-              <CTAButton variant="primary-dark" label={t.testimonials.cta} />
+              <CTAButton variant="azur" label={t.testimonials.cta} location="testimonials" />
             </div>
           </div>
 
           <div className="lg:col-span-8">
             <div className="relative min-h-[18rem]">
-              <AnimatePresence mode="wait">
                 <motion.figure
                   key={i}
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                   className="relative"
                 >
@@ -85,7 +83,6 @@ export function Testimonials() {
                     </div>
                   </figcaption>
                 </motion.figure>
-              </AnimatePresence>
             </div>
           </div>
         </div>

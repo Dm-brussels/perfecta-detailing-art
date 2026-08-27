@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useT } from "./AppProviders";
+import { useT, useWhatsApp } from "./AppProviders";
 import { Wordmark } from "./Wordmark";
 import { CTAButton } from "./CTAButton";
 import { LangToggle } from "./LangToggle";
+import { PhoneLink } from "./PhoneLink";
+import { WhatsAppIcon } from "./Icons";
 
 function InstagramIcon({ className = "" }: { className?: string }) {
   return (
@@ -27,6 +29,7 @@ function InstagramIcon({ className = "" }: { className?: string }) {
 
 export function Footer() {
   const t = useT();
+  const { openFlow } = useWhatsApp();
 
   const NAV = [
     { href: "#services", label: t.nav.services },
@@ -46,8 +49,18 @@ export function Footer() {
             <p className="mt-8 max-w-sm text-sm leading-relaxed text-white/55">
               {t.common.footerSig}
             </p>
-            <div className="mt-8 flex items-center gap-3">
-              <CTAButton variant="primary-light" label={t.common.cta} />
+            <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+              <CTAButton variant="azur" label={t.common.cta} location="footer" />
+              <button
+                type="button"
+                onClick={() => openFlow("footer")}
+                className="inline-flex items-center gap-3 border border-white/25 px-6 py-4 text-white transition-colors duration-300 hover:border-white/60 cursor-pointer focus-azur"
+              >
+                <WhatsAppIcon className="h-4 w-4 text-whatsapp" />
+                <span className="text-[0.72rem] uppercase tracking-[0.22em]">
+                  {t.common.whatsapp}
+                </span>
+              </button>
             </div>
           </div>
 
@@ -69,9 +82,12 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-4">
-            <span className="eyebrow text-white/55">{t.common.visit}</span>
+            <span className="eyebrow text-white/55">{t.common.contact}</span>
             <span aria-hidden className="my-5 block h-px w-8 bg-white/20" />
             <p className="text-sm text-white/75">{t.common.visitText}</p>
+            <div className="mt-4">
+              <PhoneLink location="footer" variant="light" label={t.common.callUs} />
+            </div>
 
             <div className="mt-10">
               <span className="eyebrow text-white/55">{t.common.socials}</span>

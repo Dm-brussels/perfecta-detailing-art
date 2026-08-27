@@ -1,6 +1,6 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { Marquee } from "@/components/Marquee";
+import { TrustBand } from "@/components/TrustBand";
 import { Ambassador } from "@/components/Ambassador";
 import { Stats } from "@/components/Stats";
 import { Services } from "@/components/Services";
@@ -13,7 +13,7 @@ import { FAQ } from "@/components/FAQ";
 import { Visit } from "@/components/Visit";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
-import { MobileStickyCta } from "@/components/MobileStickyCta";
+import { StickyBar } from "@/components/StickyBar";
 
 export default function Home() {
   return (
@@ -21,9 +21,9 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Marquee />
-        <Stats />
+        <TrustBand />
         <Services />
+        <Stats />
         <Process />
         <Showcase />
         <Gallery />
@@ -35,7 +35,7 @@ export default function Home() {
         <Ambassador />
       </main>
       <Footer />
-      <MobileStickyCta />
+      <StickyBar />
     </>
   );
 }

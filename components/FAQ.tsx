@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import { useT } from "./AppProviders";
 import { SectionTitle } from "./SectionTitle";
@@ -27,7 +26,7 @@ export function FAQ() {
               description={t.faq.desc}
             />
             <div className="mt-10">
-              <CTAButton variant="primary-dark" label={t.faq.cta} />
+              <CTAButton variant="azur" label={t.faq.cta} location="faq" />
             </div>
           </div>
 
@@ -65,24 +64,24 @@ export function FAQ() {
                       )}
                     </span>
                   </button>
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                        className="overflow-hidden"
-                      >
-                        <div className="grid grid-cols-12 gap-8 pb-8 pl-0 sm:pl-2">
-                          <div className="col-span-12 sm:col-span-1" />
-                          <p className="col-span-12 max-w-2xl text-sm leading-relaxed text-noir/65 sm:col-span-11 sm:text-base">
-                            {item.a}
-                          </p>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  {/* Repli en CSS pur (grid-rows 0fr → 1fr) : la réponse reste
+                      montée, l'ouverture comme la fermeture sont fiables. */}
+                  <div
+                    className={`grid transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                      isOpen
+                        ? "grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="grid grid-cols-12 gap-8 pb-8 pl-0 sm:pl-2">
+                        <div className="col-span-12 sm:col-span-1" />
+                        <p className="col-span-12 max-w-2xl text-sm leading-relaxed text-noir/65 sm:col-span-11 sm:text-base">
+                          {item.a}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </li>
               );
             })}

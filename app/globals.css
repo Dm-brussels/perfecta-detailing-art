@@ -12,6 +12,15 @@
   --color-olive-light: #6a7a4d;
   --color-olive-dark: #353f25;
 
+  /* Bleu d'action — inspiré du bleu principal Apple. Réservé aux CTA. */
+  --color-azur: #0071e3;
+  --color-azur-hover: #0862c9;
+  --color-azur-light: #2f97ff;
+
+  /* Vert WhatsApp officiel */
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #1da851;
+
   --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 
@@ -99,6 +108,34 @@ body {
   text-wrap: balance;
 }
 
+/* Carte de contenu : fond légèrement décollé du blanc + filet discret */
+.card {
+  background: #ffffff;
+  border: 1px solid rgba(9, 9, 9, 0.08);
+  box-shadow: 0 1px 2px rgba(9, 9, 9, 0.03);
+}
+.card-bone {
+  background: var(--color-bone);
+  border: 1px solid rgba(9, 9, 9, 0.07);
+}
+.card-dark {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Anneau bleu de focus, cohérent sur tous les CTA */
+.focus-azur:focus-visible {
+  outline: 2px solid var(--color-azur);
+  outline-offset: 3px;
+}
+
+/* Halo doux sous les CTA bleus, pour les décoller du fond */
+.shadow-azur {
+  box-shadow:
+    0 1px 2px rgba(0, 113, 227, 0.2),
+    0 10px 28px -12px rgba(0, 113, 227, 0.55);
+}
+
 /* Soft luminous gradient used on dark sections */
 .bg-noir-glow {
   background:
@@ -122,5 +159,15 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Fondu d'ouverture des surcouches (lightbox) */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

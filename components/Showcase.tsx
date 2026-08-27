@@ -103,7 +103,7 @@ export function Showcase() {
             </dl>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <CTAButton variant="primary-dark" label={t.showcase.cta} />
+              <CTAButton variant="azur" label={t.showcase.cta} location="showcase" />
               <a
                 href="#galerie"
                 className="group inline-flex items-center gap-3 px-2 py-3 text-[0.72rem] uppercase tracking-[0.22em] text-noir transition-colors hover:text-olive cursor-pointer"

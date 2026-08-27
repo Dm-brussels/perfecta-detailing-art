@@ -9,6 +9,8 @@ import {
   useState,
 } from "react";
 import { dict, type Lang, type Dict } from "@/lib/i18n";
+import { track } from "@/lib/analytics";
+import { WhatsAppFlow } from "./WhatsAppFlow";
 
 /* ───────── Lang context ───────── */
 const LangCtx = createContext<{
@@ -27,9 +29,24 @@ export function useT() {
   return useLang().t;
 }
 
+/* ───────── WhatsApp context ───────── */
+const WhatsAppCtx = createContext<{
+  open: boolean;
+  /** `location` sert au tracking pour situer le déclencheur */
+  openFlow: (location: string) => void;
+  close: () => void;
+} | null>(null);
+
+export function useWhatsApp() {
+  const ctx = useContext(WhatsAppCtx);
+  if (!ctx) throw new Error("useWhatsApp must be inside <AppProviders>");
+  return ctx;
+}
+
 /* ───────── Provider ───────── */
 export function AppProviders({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Lang>("fr");
+  const [waOpen, setWaOpen] = useState(false);
 
   // Init from localStorage / browser
   useEffect(() => {
@@ -57,5 +74,23 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
     [lang, setLang],
   );
 
-  return <LangCtx.Provider value={langValue}>{children}</LangCtx.Provider>;
+  const openFlow = useCallback((location: string) => {
+    track("whatsapp_open", { location });
+    setWaOpen(true);
+  }, []);
+  const close = useCallback(() => setWaOpen(false), []);
+
+  const waValue = useMemo(
+    () => ({ open: waOpen, openFlow, close }),
+    [waOpen, openFlow, close],
+  );
+
+  return (
+    <LangCtx.Provider value={langValue}>
+      <WhatsAppCtx.Provider value={waValue}>
+        {children}
+        <WhatsAppFlow />
+      </WhatsAppCtx.Provider>
+    </LangCtx.Provider>
+  );
 }

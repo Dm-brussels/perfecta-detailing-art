@@ -2,12 +2,15 @@
 
 import { motion } from "framer-motion";
 import { ArrowDownRight } from "lucide-react";
-import { useT } from "./AppProviders";
+import { useT, useWhatsApp } from "./AppProviders";
 import { CTAButton } from "./CTAButton";
 import { HeroBackground } from "./HeroBackground";
+import { PhoneLink } from "./PhoneLink";
+import { WhatsAppIcon } from "./Icons";
 
 export function Hero() {
   const t = useT();
+  const { openFlow } = useWhatsApp();
 
   return (
     <section
@@ -42,11 +45,31 @@ export function Hero() {
             {t.hero.desc}
           </p>
 
-          <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <CTAButton variant="primary-light" size="lg" label={t.hero.cta} />
+          <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+            <CTAButton
+              variant="azur"
+              size="lg"
+              label={t.hero.cta}
+              location="hero"
+              className="w-full sm:w-auto"
+            />
+            <button
+              type="button"
+              onClick={() => openFlow("hero")}
+              className="group inline-flex w-full items-center justify-center gap-3 border border-white/30 bg-white/5 px-8 py-5 text-white backdrop-blur-sm transition-colors duration-300 hover:border-white/60 hover:bg-white/10 cursor-pointer focus-azur sm:w-auto"
+            >
+              <WhatsAppIcon className="h-5 w-5 text-whatsapp" />
+              <span className="text-[0.78rem] uppercase tracking-[0.24em]">
+                {t.common.whatsapp}
+              </span>
+            </button>
+          </div>
+
+          <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <PhoneLink location="hero" variant="light" label={t.common.callUs} />
             <a
               href="#services"
-              className="group inline-flex items-center gap-3 px-2 py-4 text-[0.72rem] uppercase tracking-[0.22em] text-white/85 transition-colors hover:text-white cursor-pointer"
+              className="group inline-flex items-center gap-3 text-[0.7rem] uppercase tracking-[0.2em] text-white/60 transition-colors hover:text-white cursor-pointer"
             >
               {t.hero.secondary}
               <ArrowDownRight

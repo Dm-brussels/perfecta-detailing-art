@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Maximize2, X } from "lucide-react";
 import { useT } from "./AppProviders";
 import { SectionTitle } from "./SectionTitle";
@@ -69,8 +69,9 @@ export function Gallery() {
             description={t.gallery.desc}
           />
           <CTAButton
-            variant="ghost-dark"
+            variant="azur"
             label={t.gallery.cta}
+            location="gallery_header"
             arrow="up-right"
             className="hidden self-start lg:inline-flex"
           />
@@ -119,23 +120,18 @@ export function Gallery() {
         </div>
 
         <div className="mt-12 flex justify-center">
-          <CTAButton variant="primary-dark" size="lg" label={t.gallery.cta} />
+          <CTAButton variant="azur" size="lg" label={t.gallery.cta} location="gallery_footer" />
         </div>
       </div>
 
       {/* Lightbox */}
-      <AnimatePresence>
-        {current && openIndex !== null && (
-          <motion.div
-            key="lightbox"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.35 }}
+      {/* Fondu en CSS : la fermeture est aussi fiable que l'ouverture. */}
+      {current && openIndex !== null && (
+          <div
             role="dialog"
             aria-modal="true"
             aria-label={current.title}
-            className="fixed inset-0 z-[120] flex items-center justify-center"
+            className="fixed inset-0 z-[120] flex animate-[fade-in_300ms_ease-out] items-center justify-center"
           >
             <button
               type="button"
@@ -168,12 +164,10 @@ export function Gallery() {
             </div>
 
             {/* Image */}
-            <AnimatePresence mode="wait">
               <motion.div
                 key={current.src}
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="relative z-[1] mx-4 my-24 flex max-h-[80vh] w-full max-w-6xl items-center justify-center sm:mx-10"
                 onClick={(e) => e.stopPropagation()}
@@ -190,7 +184,6 @@ export function Gallery() {
                   />
                 </div>
               </motion.div>
-            </AnimatePresence>
 
             {/* Prev / Next */}
             <button
@@ -209,9 +202,8 @@ export function Gallery() {
             >
               <ArrowRight strokeWidth={1.25} className="h-5 w-5" />
             </button>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
     </section>
   );
 }

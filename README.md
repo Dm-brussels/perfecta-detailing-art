@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Perfecta Detailing Art
 
-## Getting Started
+Landing page du centre esthétique automobile Perfecta Detailing Art
+(PPF, traitement céramique, detailing) — Braine-l'Alleud.
 
-First, run the development server:
+Next.js 16 · React 19 · Tailwind v4 · Resend · Vercel Blob.
+
+## Démarrer
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Copier `.env.example` vers `.env.local` et renseigner les variables utiles.
+Sans `BLOB_READ_WRITE_TOKEN`, les leads sont écrits dans `./.data` (ignoré par git).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Parcours de conversion
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Trois chemins, tous instrumentés :
 
-## Learn More
+| Chemin | Point d'entrée | Événement |
+| --- | --- | --- |
+| Devis | CTA bleus, barre sticky, header, menu mobile | `cta_click` → `quote_submit` |
+| WhatsApp | Barre sticky, hero, footer, page devis | `whatsapp_open` → `whatsapp_click` |
+| Téléphone | Header, hero, section atelier, footer | `phone_click` |
 
-To learn more about Next.js, take a look at the following resources:
+Le formulaire de devis (`/devis`) tient en trois étapes : prestation, projet
+(véhicule + délai), coordonnées. Le téléphone y est obligatoire.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Le bouton WhatsApp ouvre un mini-formulaire d'une étape (prestation + délai)
+qui génère un message pré-rempli avant d'ouvrir la conversation.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tracking
 
-## Deploy on Vercel
+`lib/analytics.ts` envoie chaque événement vers :
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. `window.dataLayer` et `gtag` — exploitables par GTM, GA4 et Google Ads.
+   Renseigner `NEXT_PUBLIC_GTM_ID` **ou** `NEXT_PUBLIC_GA_ID` pour charger le tag.
+2. `/api/track` — compteur interne persistant lu par le dashboard.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Espace privé `/leads`
+
+Dashboard des demandes et des interactions. Non indexé (`noindex` + `robots.txt`),
+absent de la navigation, protégé par un mot de passe vérifié côté serveur
+(`LEADS_PASSWORD`, session en cookie httpOnly signé, limitation des tentatives).
+
+## Stockage
+
+Vercel Blob, un fichier par enregistrement, store **privé** (`perfecta-leads`) :
+
+- `leads/<horodatage>__<id>.txt` — le lead complet, chiffré en AES-256-GCM
+  avec une clé dérivée de `LEADS_SECRET`.
+- `events/<horodatage>__<type>.txt` — le type et la date tiennent dans le nom
+  du fichier : les statistiques se calculent sans télécharger aucun contenu.
+
+> `LEADS_SECRET` ne doit jamais changer : les leads déjà enregistrés
+> deviendraient illisibles.
+
+## Note technique — animations
+
+`AnimatePresence` de framer-motion 12.38 ne résout pas ses animations de sortie
+dans cette combinaison React 19 / Next 16 : l'élément sortant ne se démonte
+jamais et l'élément entrant ne se monte pas. Les composants concernés
+(formulaire, onglets services, FAQ, galerie, modale WhatsApp) utilisent donc des
+transitions d'entrée seules ou du CSS. Ne pas réintroduire `AnimatePresence`
+sans vérifier que la sortie se termine.

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useT } from "./AppProviders";
 import { SectionTitle } from "./SectionTitle";
 import { CTAButton } from "./CTAButton";
@@ -35,8 +35,9 @@ export function Services() {
             description={t.services.desc}
           />
           <CTAButton
-            variant="ghost-dark"
+            variant="azur"
             label={t.services.startProject}
+            location="services_header"
             arrow="up-right"
             className="hidden self-start lg:inline-flex"
           />
@@ -82,12 +83,13 @@ export function Services() {
 
           {/* Active service detail */}
           <div className="relative bg-bone p-8 lg:col-span-7 lg:p-12">
-            <AnimatePresence mode="wait">
+            {/* `key` change à chaque onglet : la div est remontée et rejoue
+                son entrée. Pas d'`AnimatePresence`, dont la sortie ne se
+                résout pas ici et bloquerait le montage du panneau suivant. */}
               <motion.div
                 key={items[active].id}
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 className="grid grid-cols-1 gap-10 lg:grid-cols-2"
               >
@@ -127,15 +129,15 @@ export function Services() {
                   </div>
 
                   <CTAButton
-                    variant="outline-dark"
+                    variant="azur"
                     label={t.services.ctaForThis}
-                    presetServiceId={items[active].id === "ppf" ? "ppf-only" : items[active].id}
+                    presetServiceId={items[active].id}
+                    location="services_detail"
                     arrow="up-right"
                     className="self-start"
                   />
                 </div>
               </motion.div>
-            </AnimatePresence>
           </div>
         </div>
       </div>

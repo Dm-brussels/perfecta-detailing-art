@@ -2,16 +2,21 @@
 
 import { z } from "zod";
 import { Resend } from "resend";
+import { saveLead } from "@/lib/store";
 
 const QuoteSchema = z.object({
-  serviceType: z.string().min(1, "service"),
+  service: z.string().min(1, "service"),
   serviceLabel: z.string().min(1),
-  carCategory: z.string().min(1, "category"),
-  carModel: z.string().min(2, "model").max(120),
-  addons: z.array(z.string()).optional().default([]),
-  addonsLabels: z.array(z.string()).optional().default([]),
+  vehicle: z.string().min(2, "vehicle").max(160),
+  timing: z.string().min(1, "timing"),
+  timingLabel: z.string().min(1),
   message: z.string().max(2000).optional().default(""),
   name: z.string().min(2, "name").max(120),
+  phone: z
+    .string()
+    .min(8, "phone")
+    .max(30)
+    .refine((v) => /^\+?\d{8,15}$/.test(v.replace(/[\s.\-()]/g, "")), "phone"),
   email: z.string().email("email"),
   consent: z.boolean().refine((v) => v === true, "consent"),
   lang: z.enum(["fr", "en"]).default("fr"),
@@ -37,18 +42,18 @@ function buildAdminHtml(data: QuoteInput) {
   return `
     <div style="font-family: ui-sans-serif, system-ui, sans-serif; color: #0a0a0a; max-width: 640px; margin: 0 auto;">
       <div style="border-bottom: 1px solid #e5e5e5; padding-bottom: 16px; margin-bottom: 24px;">
-        <p style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #4b5834; margin: 0 0 6px 0;">Nouvelle demande de devis · ${data.lang.toUpperCase()}</p>
+        <p style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #0071e3; margin: 0 0 6px 0;">Nouvelle demande de devis · ${data.lang.toUpperCase()}</p>
         <h1 style="font-size: 22px; margin: 0; font-weight: 300;">Perfecta Detailing Art</h1>
       </div>
       <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-        <tr><td style="padding: 8px 0; color: #555; width: 180px;">Service</td><td><strong>${safeHtml(data.serviceLabel)}</strong></td></tr>
-        <tr><td style="padding: 8px 0; color: #555;">Catégorie</td><td>${safeHtml(data.carCategory)}</td></tr>
-        <tr><td style="padding: 8px 0; color: #555;">Modèle</td><td>${safeHtml(data.carModel)}</td></tr>
-        <tr><td style="padding: 8px 0; color: #555; vertical-align: top;">Options</td><td>${data.addonsLabels.length ? data.addonsLabels.map(safeHtml).join(", ") : "Aucune"}</td></tr>
+        <tr><td style="padding: 8px 0; color: #555; width: 180px;">Prestation</td><td><strong>${safeHtml(data.serviceLabel)}</strong></td></tr>
+        <tr><td style="padding: 8px 0; color: #555;">Véhicule</td><td>${safeHtml(data.vehicle)}</td></tr>
+        <tr><td style="padding: 8px 0; color: #555;">Délai souhaité</td><td>${safeHtml(data.timingLabel)}</td></tr>
         <tr><td colspan="2" style="padding: 16px 0 4px 0; color: #555; border-top: 1px solid #eee;">Message</td></tr>
         <tr><td colspan="2" style="white-space: pre-wrap;">${safeHtml(data.message || "(sans message)")}</td></tr>
         <tr><td colspan="2" style="padding: 16px 0 4px 0; color: #555; border-top: 1px solid #eee;">Coordonnées</td></tr>
         <tr><td style="padding: 4px 0; color: #555;">Nom</td><td>${safeHtml(data.name)}</td></tr>
+        <tr><td style="padding: 4px 0; color: #555;">Téléphone</td><td><a href="tel:${safeHtml(data.phone)}">${safeHtml(data.phone)}</a></td></tr>
         <tr><td style="padding: 4px 0; color: #555;">Email</td><td><a href="mailto:${safeHtml(data.email)}">${safeHtml(data.email)}</a></td></tr>
       </table>
       <p style="margin-top: 24px; font-size: 11px; color: #888; letter-spacing: 0.18em; text-transform: uppercase;">PDA · Centre esthétique automobile</p>
@@ -65,11 +70,9 @@ function buildClientHtml(data: QuoteInput) {
           "Thank you for trusting us with your project. We have received your request and our team will get back to you within 24 working hours with an initial reply.",
         summary: "Your request",
         service: "Service",
-        category: "Category",
-        model: "Make & model",
-        addons: "Add-ons",
+        vehicle: "Vehicle",
+        timing: "Timing",
         message: "Notes",
-        none: "None",
         noMsg: "(no message)",
         closing:
           "In the meantime, feel free to reply directly to this email if you have any extra details to share.",
@@ -83,12 +86,10 @@ function buildClientHtml(data: QuoteInput) {
         intro:
           "Merci pour votre confiance. Nous avons bien reçu votre demande et notre équipe revient vers vous sous 24 heures ouvrées avec un premier retour personnalisé.",
         summary: "Votre demande",
-        service: "Service",
-        category: "Catégorie",
-        model: "Marque & modèle",
-        addons: "Options",
+        service: "Prestation",
+        vehicle: "Véhicule",
+        timing: "Délai souhaité",
         message: "Précisions",
-        none: "Aucune",
         noMsg: "(sans message)",
         closing:
           "D'ici là, n'hésitez pas à répondre directement à cet email si vous avez d'autres précisions à nous transmettre.",
@@ -103,7 +104,7 @@ function buildClientHtml(data: QuoteInput) {
     html: `
     <div style="font-family: ui-sans-serif, system-ui, sans-serif; color: #0a0a0a; max-width: 600px; margin: 0 auto; padding: 8px;">
       <div style="border-bottom: 1px solid #e5e5e5; padding-bottom: 18px; margin-bottom: 28px;">
-        <p style="font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: #4b5834; margin: 0 0 6px 0;">Perfecta Detailing Art</p>
+        <p style="font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: #0071e3; margin: 0 0 6px 0;">Perfecta Detailing Art</p>
         <h1 style="font-size: 24px; margin: 0; font-weight: 300; letter-spacing: -0.01em;">${T.subject}</h1>
       </div>
 
@@ -114,9 +115,8 @@ function buildClientHtml(data: QuoteInput) {
         <p style="font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: #888; margin: 0 0 14px 0;">${T.summary}</p>
         <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
           <tr><td style="padding: 6px 0; color: #666; width: 140px;">${T.service}</td><td><strong>${safeHtml(data.serviceLabel)}</strong></td></tr>
-          <tr><td style="padding: 6px 0; color: #666;">${T.category}</td><td>${safeHtml(data.carCategory)}</td></tr>
-          <tr><td style="padding: 6px 0; color: #666;">${T.model}</td><td>${safeHtml(data.carModel)}</td></tr>
-          <tr><td style="padding: 6px 0; color: #666; vertical-align: top;">${T.addons}</td><td>${data.addonsLabels.length ? data.addonsLabels.map(safeHtml).join(", ") : T.none}</td></tr>
+          <tr><td style="padding: 6px 0; color: #666;">${T.vehicle}</td><td>${safeHtml(data.vehicle)}</td></tr>
+          <tr><td style="padding: 6px 0; color: #666;">${T.timing}</td><td>${safeHtml(data.timingLabel)}</td></tr>
           ${
             data.message
               ? `<tr><td colspan="2" style="padding: 12px 0 4px 0; color: #666;">${T.message}</td></tr><tr><td colspan="2" style="white-space: pre-wrap; color: #333;">${safeHtml(data.message)}</td></tr>`
@@ -148,6 +148,24 @@ export async function submitQuote(input: QuoteInput): Promise<QuoteState> {
 
   const data = parsed.data;
 
+  // Historique des leads (consultable sur /leads) — indépendant de l'envoi email
+  try {
+    await saveLead({
+      service: data.service,
+      serviceLabel: data.serviceLabel,
+      vehicle: data.vehicle,
+      timing: data.timing,
+      timingLabel: data.timingLabel,
+      message: data.message,
+      name: data.name,
+      phone: data.phone,
+      email: data.email,
+      lang: data.lang,
+    });
+  } catch (err) {
+    console.error("Lead store error:", err);
+  }
+
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.QUOTE_EMAIL_TO ?? TO_DEFAULT;
   const from = process.env.QUOTE_EMAIL_FROM ?? FROM_DEFAULT;
@@ -165,7 +183,7 @@ export async function submitQuote(input: QuoteInput): Promise<QuoteState> {
       from,
       to,
       replyTo: data.email,
-      subject: `Demande de devis · ${data.serviceLabel} · ${data.carModel}`,
+      subject: `Demande de devis · ${data.serviceLabel} · ${data.vehicle}`,
       html: buildAdminHtml(data),
     });
 
