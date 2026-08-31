@@ -17,9 +17,9 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   const NAV = [
+    { href: "#realisations", label: t.nav.work },
     { href: "#services", label: t.nav.services },
     { href: "#process", label: t.nav.process },
-    { href: "#galerie", label: t.nav.gallery },
     { href: "#pourquoi", label: t.nav.why },
     { href: "#avis", label: t.nav.reviews },
     { href: "#faq", label: t.nav.faq },
@@ -86,7 +86,7 @@ export function Header() {
             <Link
               href="/devis"
               onClick={() => track("cta_click", { location: "header" })}
-              className="hidden sm:inline-flex h-11 shrink-0 items-center whitespace-nowrap bg-azur px-5 text-[0.7rem] uppercase tracking-[0.16em] text-white shadow-azur transition-colors duration-300 hover:bg-azur-hover cursor-pointer focus-azur lg:px-6 lg:text-[0.72rem] lg:tracking-[0.18em]"
+              className="hidden sm:inline-flex h-11 shrink-0 items-center whitespace-nowrap bg-noir px-5 text-[0.7rem] uppercase tracking-[0.16em] text-white transition-colors duration-300 hover:bg-noir/80 cursor-pointer focus-azur lg:px-6 lg:text-[0.72rem] lg:tracking-[0.18em]"
             >
               {t.common.cta}
             </Link>
@@ -151,7 +151,7 @@ export function Header() {
                 track("cta_click", { location: "mobile_menu" });
                 setOpen(false);
               }}
-              className="inline-flex h-14 items-center justify-center bg-azur px-8 text-[0.74rem] uppercase tracking-[0.22em] text-white transition-colors hover:bg-azur-hover cursor-pointer focus-azur"
+              className="inline-flex h-14 items-center justify-center bg-white px-8 text-[0.74rem] uppercase tracking-[0.22em] text-noir transition-colors hover:bg-bone cursor-pointer focus-azur"
             >
               {t.common.cta}
             </Link>

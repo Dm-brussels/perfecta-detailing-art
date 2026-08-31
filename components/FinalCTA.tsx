@@ -27,7 +27,7 @@ export function FinalCTA() {
 
       <div className="relative mx-auto max-w-4xl px-6 text-center sm:px-8">
         <span className="eyebrow text-white/60">{t.cta.eyebrow}</span>
-        <span aria-hidden className="my-7 mx-auto block h-px w-12 bg-azur" />
+        <span aria-hidden className="my-7 mx-auto block h-px w-12 bg-olive-light" />
         <h2 className="font-display text-4xl font-light leading-[1.05] tracking-tight text-balance text-white sm:text-6xl">
           {t.cta.title1}
           <br />

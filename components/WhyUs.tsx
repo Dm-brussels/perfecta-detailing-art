@@ -61,7 +61,7 @@ export function WhyUs() {
         </div>
 
         <div className="mt-14 flex justify-center">
-          <CTAButton variant="azur" size="lg" label={t.why.cta} location="why_us" />
+          <CTAButton variant="primary-dark" size="lg" label={t.why.cta} location="why_us" />
         </div>
       </div>
     </section>

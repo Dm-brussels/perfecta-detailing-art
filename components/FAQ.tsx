@@ -26,7 +26,7 @@ export function FAQ() {
               description={t.faq.desc}
             />
             <div className="mt-10">
-              <CTAButton variant="azur" label={t.faq.cta} location="faq" />
+              <CTAButton variant="outline-dark" label={t.faq.cta} location="faq" />
             </div>
           </div>
 

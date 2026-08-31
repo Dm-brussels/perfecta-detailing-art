@@ -23,7 +23,7 @@ export function Stats() {
                   </span>
                 )}
               </div>
-              <span aria-hidden className="my-4 block h-px w-10 bg-azur" />
+              <span aria-hidden className="my-4 block h-px w-10 bg-olive" />
               <p className="text-sm leading-relaxed text-noir/65">{s.label}</p>
             </div>
           ))}

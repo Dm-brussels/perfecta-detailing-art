@@ -32,9 +32,9 @@ export function Footer() {
   const { openFlow } = useWhatsApp();
 
   const NAV = [
+    { href: "#realisations", label: t.nav.work },
     { href: "#services", label: t.nav.services },
     { href: "#process", label: t.nav.process },
-    { href: "#galerie", label: t.nav.gallery },
     { href: "#pourquoi", label: t.nav.why },
     { href: "#avis", label: t.nav.reviews },
     { href: "#faq", label: t.nav.faq },
@@ -50,7 +50,7 @@ export function Footer() {
               {t.common.footerSig}
             </p>
             <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
-              <CTAButton variant="azur" label={t.common.cta} location="footer" />
+              <CTAButton variant="outline-light" label={t.common.cta} location="footer" />
               <button
                 type="button"
                 onClick={() => openFlow("footer")}

@@ -51,7 +51,7 @@ export function Testimonials() {
             </div>
 
             <div className="mt-10">
-              <CTAButton variant="azur" label={t.testimonials.cta} location="testimonials" />
+              <CTAButton variant="outline-dark" label={t.testimonials.cta} location="testimonials" />
             </div>
           </div>
 

@@ -43,7 +43,7 @@ export function StickyBar() {
         <Link
           href="/devis"
           onClick={() => track("cta_click", { location: "sticky_bar" })}
-          className="group flex flex-1 items-center justify-center gap-3 bg-azur px-4 py-4 text-white transition-colors hover:bg-azur-hover cursor-pointer focus-azur sm:gap-4"
+          className="group flex flex-1 items-center justify-center gap-3 bg-noir px-4 py-4 text-white transition-colors hover:bg-noir/85 cursor-pointer focus-azur sm:gap-4"
         >
           <span className="text-[0.72rem] uppercase tracking-[0.18em] sm:text-[0.76rem] sm:tracking-[0.22em]">
             {t.common.cta}

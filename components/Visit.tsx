@@ -41,7 +41,7 @@ export function Visit() {
 
             <div className="mt-8 flex flex-col gap-3 xl:flex-row xl:items-center">
               <CTAButton
-                variant="azur"
+                variant="primary-dark"
                 size="lg"
                 label={t.visit.cta}
                 location="visit"

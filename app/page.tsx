@@ -1,12 +1,11 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { Work } from "@/components/Work";
 import { TrustBand } from "@/components/TrustBand";
 import { Ambassador } from "@/components/Ambassador";
 import { Stats } from "@/components/Stats";
 import { Services } from "@/components/Services";
 import { Process } from "@/components/Process";
-import { Showcase } from "@/components/Showcase";
-import { Gallery } from "@/components/Gallery";
 import { WhyUs } from "@/components/WhyUs";
 import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
@@ -21,12 +20,11 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Work />
         <TrustBand />
         <Services />
         <Stats />
         <Process />
-        <Showcase />
-        <Gallery />
         <WhyUs />
         <Testimonials />
         <FAQ />

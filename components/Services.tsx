@@ -35,7 +35,7 @@ export function Services() {
             description={t.services.desc}
           />
           <CTAButton
-            variant="azur"
+            variant="outline-dark"
             label={t.services.startProject}
             location="services_header"
             arrow="up-right"
@@ -129,7 +129,7 @@ export function Services() {
                   </div>
 
                   <CTAButton
-                    variant="azur"
+                    variant="primary-dark"
                     label={t.services.ctaForThis}
                     presetServiceId={items[active].id}
                     location="services_detail"

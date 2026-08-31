@@ -81,7 +81,7 @@ export function Process() {
         </div>
 
         <div className="mt-16 flex justify-center">
-          <CTAButton variant="azur" size="lg" label={t.process.cta} location="process" />
+          <CTAButton variant="outline-light" size="lg" label={t.process.cta} location="process" />
         </div>
       </div>
     </section>
